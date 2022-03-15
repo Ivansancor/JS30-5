@@ -6,24 +6,29 @@
 }
 
 .panels {
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .panels .panel {
-  color: black;
-  text-transform: uppercase;
+  color: white;
   font-size: 2rem;
   font-family: "Bebas Neue", cursive;
   text-align: center;
-  width: 100%;
-  height: 100%;
+  -webkit-box-shadow: inset 0 0 5px 5px rgba(255, 255, 255, 0.1);
+          box-shadow: inset 0 0 5px 5px rgba(255, 255, 255, 0.1);
+  background-position: right;
+  background-size: cover;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-transition: font-size 0.7s cubic-bezier(0.5, -0.1, 0.5, -0.1), -webkit-box-flex 0.7s cubic-bezier(0.5, -0.1, 0.5, -0.1);
+  transition: font-size 0.7s cubic-bezier(0.5, -0.1, 0.5, -0.1), -webkit-box-flex 0.7s cubic-bezier(0.5, -0.1, 0.5, -0.1);
+  transition: flex 0.7s cubic-bezier(0.5, -0.1, 0.5, -0.1), font-size 0.7s cubic-bezier(0.5, -0.1, 0.5, -0.1);
+  transition: flex 0.7s cubic-bezier(0.5, -0.1, 0.5, -0.1), font-size 0.7s cubic-bezier(0.5, -0.1, 0.5, -0.1), -webkit-box-flex 0.7s cubic-bezier(0.5, -0.1, 0.5, -0.1), -ms-flex 0.7s cubic-bezier(0.5, -0.1, 0.5, -0.1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,56 +42,80 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
 }
 
-.panels .panel .open {
+.panels .panel > * {
+  -webkit-transition: font-size 0.2s, -webkit-transform 0.5s;
+  transition: font-size 0.2s, -webkit-transform 0.5s;
+  transition: transform 0.5s, font-size 0.2s;
+  transition: transform 0.5s, font-size 0.2s, -webkit-transform 0.5s;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.panels .panel p:nth-child(2) {
+  font-size: 4rem;
+}
+
+.panels .panel > *:first-child {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.panels .panel > *:last-child {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.panels .panel.open {
   -webkit-box-flex: 5;
       -ms-flex: 5;
           flex: 5;
 }
 
-.panels .panel .open-active {
-  display: block;
-  -webkit-transform: translateY(1000px);
-          transform: translateY(1000px);
-  -webkit-transform: translateY(-1000px);
-          transform: translateY(-1000px);
+.panels .panel.open > p:nth-child(2) {
+  font-size: 5rem;
 }
 
-.panels .panel p:nth-child(2) {
+.panels .panel.open-active > *:first-child {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
   font-size: 3rem;
 }
 
-.panels .panel p:first-child {
-  -webkit-transform: translateY(-1000px);
-          transform: translateY(-1000px);
-  display: none;
+.panels .panel.open-active > *:last-child {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  font-size: 3rem;
 }
 
-.panels .panel p:last-child {
-  -webkit-transform: translateY(1000px);
-          transform: translateY(1000px);
-  display: none;
+.panels .panel1 {
+  background: url("../assets/mountains.jpg"), lightblue;
 }
 
-.panels .panel .panel1 {
-  background: url("../dist/assets/mountains.jpg") no-repeat fixed center;
+.panels .panel2 {
+  background: url("../assets/beach.jpg"), greenyellow;
 }
 
-.panels .panel .panel2 {
-  background-image: url("../dist/assets/beach.jpg");
+.panels .panel3 {
+  background: url("../assets/lake.jpg"), lightsalmon;
 }
 
-.panels .panel .panel3 {
-  background-image: url("../dist/assets/lake.jpg");
+.panels .panel4 {
+  background: url("../assets/volcano.jpg"), darkblue;
 }
 
-.panels .panel .panel4 {
-  background-image: url("../dist/assets/volcano.jpg");
-}
-
-.panels .panel .panel5 {
-  background-image: url("../dist/assets/forest.jpg");
+.panels .panel5 {
+  background: url("../assets/forest.jpg"), darkgreen;
 }
 /*# sourceMappingURL=main.css.map */

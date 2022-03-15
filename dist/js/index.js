@@ -4,11 +4,10 @@ function openClass() {
     this.classList.toggle("open");
 }
 
-function activeClass() {
-    console.log(this.transition);
-    if (this.transition.includes("flex")) { //this is wrong, gotta change it
+function activeClass() { // i removed the e because next line doesnt work so not needed
+    // if (e.propertyName.includes("flex")) { // this doesnt work for me idk why
         this.classList.toggle("open-active");
-    }
+    // } //
 }
 
 panels.forEach(panel => panel.addEventListener("click", openClass));
